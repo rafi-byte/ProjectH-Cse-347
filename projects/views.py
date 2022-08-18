@@ -1,3 +1,4 @@
+from urllib import request
 from django.shortcuts import render
 import email
 from msilib.schema import ListView
@@ -16,6 +17,7 @@ from django .views.generic import ListView,DeleteView,CreateView,UpdateView
 from projects.models import Contact, Post,Comment #CategoryAcc
 # , registerEnquiry,Profile
 from .forms import PostForm,EditForm,CommentForm
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -74,6 +76,26 @@ class AddContactview(CreateView):
     template_name='contact.html'
     fields='__all__'
     succes_url=reverse_lazy('contact')
+
+    # def sendmail(self):
+    #     if request.method=="post":
+    #         m_name=request.Post['name']
+    #         email=request.Post['email']
+    #         body=request.Post['body']
+
+    #         send_mail(
+    #             m_name,
+    #             email,
+    #             body,
+    #             ['ashrafultan10@gmail.com'],
+    
+    
+    #         )
+    #         return render(request,'contact.html',{'m_name':name})
+    
+
+
+
 
 # def AddContactview(request):
 #     if request.method=="Post":
