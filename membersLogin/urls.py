@@ -6,7 +6,7 @@ from membersLogin.views import UserRegisterView
 
 urlpatterns=[
 
- path('register/',UserRegisterView.as_view(),name='register'),
+ path('registers/',UserRegisterView.as_view(),name='registers'),
 
 
 ]

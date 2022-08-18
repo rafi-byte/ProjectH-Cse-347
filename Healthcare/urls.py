@@ -16,10 +16,16 @@ Including another URLconf
 # from xml.etree.ElementInclude import include
 from django.contrib import admin
 from django.urls import path,include
+from my_app import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
    path('admin/', admin.site.urls),
-   path('',include('projects.urls')),
+   path('project/',include('projects.urls')),
    path('members/',include('django.contrib.auth.urls')),
    path('members/',include('membersLogin.urls')), 
+   path('',include('my_app.urls')),
+   path('users/', include('users.urls')),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

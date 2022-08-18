@@ -27,7 +27,7 @@ class HomeView(ListView):
 
 class articleview(DeleteView):
     model=Post
-    template_name='main.html'
+    template_name='UpdateEdit.html'
 
 class AddPostview(CreateView):
     model=Post
