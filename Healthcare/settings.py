@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'projects.apps.ProjectsConfig',
     'membersLogin',
-    'crispy_forms',
+    # 'crispy_forms',
     'my_app',
     'users.apps.UsersConfig',
 ]
@@ -63,7 +63,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-             os.path.join(BASE_DIR,'templates')
+            os.path.join(BASE_DIR, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -138,10 +138,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGIN_REDIRECT_URL='homeview'
-LOGIN_REDIRECT_URL='homeview'
+LOGIN_REDIRECT_URL = 'homeview'
+LOGIN_REDIRECT_URL = 'homeview'
 
-#email settings
+# email settings
 
 # EMAIL_HOST='smtp.gmail.com'
 # EMAIL_PORT=587
