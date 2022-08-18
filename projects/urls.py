@@ -14,6 +14,6 @@ urlpatterns = [
     # path('category/<str:cats>/',CategoryView,name="category_view"),
     path('article/<int:pk>/comment/', AddCommentview.as_view(), name='add_comment'),
     # path('contact/', views.AddContactview, name='contact'),
-     path('contact/', AddContactview.as_view(), name="contact"),
+    path('contact/', AddContactview.as_view(), name="contact"),
     
 ]
