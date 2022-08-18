@@ -1,4 +1,5 @@
  {% load static %}
+
 <header class="header">
     <div class="container container--narrow">
       <a href="/" class="header__logo">
@@ -13,8 +14,11 @@
         <ul class="header__menu">
           {% if request.user.is_authenticated %}
           <li class="header__menuItem"><a href="{% url 'profile' %}">Profiles</a></li>
-          <li class="header__menuItem"><a href="projects.html">Appointments</a></li>
-          <li class="header__menuItem"><a href="inbox.html">Inbox</a></li>
+          <!-- <li class="header__menuItem"><a href="projects.html">Appointments</a></li>
+          <li class="header__menuItem"><a href="inbox.html">Inbox</a></li> -->
+          <li class="header__menuItem"><a href="{% url 'contact' %}">Contact</a></li>
+          <li class="header__menuItem"><a href="{% url 'homeview' %}">Forum</a></li>
+          
           
       
         <li class="header__menuItem"><a href="{% url 'account' %}">My Account</a></li>
@@ -29,4 +33,14 @@
         </ul>
       </nav>
     </div>
+
+
   </header>
+  <!-- <body>
+    <div class="container " >
+      {% block content %}
+
+      {% endblock %}
+  </div>
+  
+  </body> -->

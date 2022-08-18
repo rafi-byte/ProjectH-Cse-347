@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+
 
 {% block content %}
 
@@ -33,6 +33,8 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 40px;
+  margin-left: 200px;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
@@ -40,15 +42,56 @@ input[type=submit]:hover {
   background-color: #45a049;
   text-align: center;
 }
+/* Style the submit button with a specific background color etc */
+button[type=button] {
+  background-color: #aa0404;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 60px;
+}
 
+/* When moving the mouse over the submit button, add a darker green color */
+button[type=button]:hover {
+  background-color: #a04545;
+  text-align: center;
+}
 /* Add a background color and some padding around the form */
-.container {
+.maindiv{
+  
+    width: 100%;
+    height: 700px;
+    margin-left: 60px;
+    margin-top: -15px;
+    position: relative;
+    /* margin-right: 20px; */
+}
+.maindiv .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #19d9d9;
   padding: 20px;
+  margin-top: 100px;
+  width: 53%;
+  height: 80%;
+  float: left;
+}
+.maindiv .pictureAdded {
+  width: 36%;
+  height: 80%;
+  float: left;
+  border-radius: 5px;
+  background-color: #af0f0f;
+  padding: 20px;
+  margin-top: 100px;
+  margin-left: -15px;
 }
 </style>
-
+<div class="maindiv">
+<div class="pictureAdded">
+<img src="static/images/contactPic.jpg">
+</div>
 
 <div class="container">
   <form action="{% url 'contact' %} " method="post">
@@ -70,8 +113,9 @@ input[type=submit]:hover {
     <textarea id="subject" name="body" placeholder="Write something.." style="height:200px" required></textarea>
 
     <input type="submit" value="Submit">
+    <a href="/"><button type="button" class="btn btn-primary">Back</button></a>
 
   </form>
 </div>
-
+</div>
 {% endblock%}
